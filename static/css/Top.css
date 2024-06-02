@@ -1,0 +1,35 @@
+.profile-down img{
+    height: 150px;
+    border-radius: 100px;
+    margin-top: -75px;
+    padding: 5px;
+    background: white;
+}
+.text h1{
+    color: blue;
+    margin-top: 20px;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+}
+.contact{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;    
+}
+.contact a{
+    color: rgb(23, 16, 16);
+    font-size: 15px;
+    text-decoration: solid;
+}
+.contact a:hover{
+    text-decoration: underline;
+}
+.profileWithLogo{
+    display: flex;
+    gap: 20px;
+}
+@media screen and (max-width: 600px) {
+    .profile {display:flex; flex-direction:column;}
+  }

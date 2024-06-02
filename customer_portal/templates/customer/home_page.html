@@ -1,0 +1,72 @@
+
+{% extends 'customer/base.html' %}
+{% block content %}
+{% load static %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Client Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Trip List</a>
+</div>
+
+<div class="w3-container w3-center w3-large" style="padding:5px;"><marquee  width="50%">Welcome sir, Please click the below search button for transport requisition</marquee></div>
+
+<div class="w3-display-container w3-center" style="height:592px;padding:20px;">
+<img src="{% static "images/final.jpg" %}">
+<div class="w3-display-middle" style="margin-top: -200px;">
+<a class="w3-btn w3-blue w3-xlarge" href="/customer_portal/search/"><b>Search Tnasports for Requisition</b></a>
+</div>
+</div>
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JU Transport Requisition</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .profile {
+      display: flex;
+      justify-content: space-between;
+      /* align-items: center; */
+      /* padding: 20px; */
+      background-color: white;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .profileWithLogo {
+      display: flex;
+      align-items: center;
+    }
+
+    .profileWithLogo img {
+      border-radius: 45%;
+      margin-right: 20px;
+      height: 90px;
+      width: 90px;
+    }
+
+    .text h1 {
+      color: blue;
+      margin: 0;
+      font-size: 36px;
+    } 
+    .contact {
+      display: flex;
+      gap: 11px;
+      font-size: 14px; 
+    }
+.contact a{
+  text-decoration: solid;
+}
+.contact a:hover{
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <div class="profileWithLogo">
+      <div>
+        <img src="{% static "images/logo.jpg" %}">
+      </div>
+      <div class="text">
+        <h1>Jahangirnagar University</h1>
+      </div>
+    </div>
+    <div class="contact">
+      <div>
+        <i class="fas fa-phone-alt"></i>
+        <a href="tel:02224491045-51">02224491045-51</a>
+      </div>
+      <div>
+        <i class="fas fa-fax"></i>
+        <a href="tel:02224491052">02224491052</a>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:registrar@juniv.edu">registrar@juniv.edu</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% load static %}
+<html>
+<head>
+  <title>JU Transport Requisition System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+</head>
+<body>
+  <div class="w3-container w3-teal">
+    <h1 class="w3-center">JU Transport Requisition System<h1>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

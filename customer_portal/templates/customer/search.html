@@ -1,0 +1,79 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Client Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/home_page/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Trip List</a>
+
+
+</div>
+
+<div class="w3-display-container" style="height:400px;">
+  <div class="w3-display-middle">
+<form method="POST" action="{% url 'search_results' %}">
+  {% csrf_token %}
+  <label for="capacity"><b><h5>Enter Number of Seat Required:</h5> </b></label>
+  <input type="number" name="capacity" required>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</div>
+
+
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'customer/base.html'%}
+{% block content %}
+<!-- <center><h4>SORRY, <br> Wrong credentials! <br> Go back to <a href="/car_dealer_portal/login/">Login Page</a></h4></center> -->
+
+<center>
+    <h4 style="font-family: Arial, sans-serif; color: #e74c3c; background-color: #fff; padding: 150px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        SORRY,<br>
+        <span style="display: block; margin-top: 10px;">Wrong credentials!</span><br>
+        <span style="display: block; margin-top: 10px;">Go back to</span>
+        <a href="/customer_portal/login/" style="text-decoration: none; color: #fff; background-color: #3498db; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s ease; display: inline-block; margin-top: 10px;">Login Page</a>
+    </h4>
+</center>
+
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+
+{% endblock %}

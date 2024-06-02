@@ -1,0 +1,107 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Client Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/home_page/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Trip List</a>
+  <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search Cars</a>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 750px; padding: 20px;">
+  <div class="w-100" style="max-width: 400px;">
+    <div class="border rounded p-4 shadow-sm bg-white">
+      <h4 class="mb-4 text-center"><b>Transport: {{vehicle.car_name}}</b></h4>
+      <form action="/customer_portal/confirmed/" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="days" class="form-label"><b>Price:  {{cost_per_day}} Taka per day</b></label>
+        </div>
+        <br class="mb-3">
+        <label for="days" class="form-label"><b>Client Name:</b></label>
+          <input type="text" class="form-control" id="days" name="cl"> <br>
+          <label for="days" class="form-label"><b>Mobile Number:</b></label>
+          <input type="text" class="form-control" id="days" name="mob"> <br>
+          <label for="days" class="form-label"><b>Email Address:</b></label>
+          <input type="text" class="form-control" id="days" name="em"> <br>
+          <label for="days" class="form-label"><b>How many days:</b></label>
+          <input type="text" class="form-control" id="days" name="days"> <br>
+          <label for="days" class="form-label"><b>Choose Reservation Date:</b></label>
+          <input type="date" class="form-control" id="reservation_date" name="reservation_date"><br>
+          <label for="days" class="form-label"><b>Select Reservation Type:</b></label>
+          <select class="form-select" id="status" name="status">
+            
+            <option value="Official" >
+              Official
+            </option>
+            <option value="Unofficial" >
+              Unofficial
+            </option>
+          </select>
+
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Confirm Requisition</button>
+        <input type="hidden" value="{{vehicle.id}}" name="id">
+      </form>
+    </div>
+  </div>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</div>
+
+
+
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+{% endblock %}

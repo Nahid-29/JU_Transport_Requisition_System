@@ -1,0 +1,171 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Client Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/home_page/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Trip List</a>
+  <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search Cars</a>
+</div>
+{% csrf_token %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Completed</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .order-container {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f2f5;
+    }
+    .order-details {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      max-width: 800px;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #e2e6ea;
+    }
+    th, td {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="order-container" style="height: 700px;">
+  <div class="order-details">
+    <h3 class="text-center text-primary"><b>Requisition Completed..</b></h3>
+    <p class="text-center text-success"><b>Your Transport Requisition Has Been Processed!</b></p>
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Details</th>
+          <th scope="col">Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Client Name</th>
+          <td>{{order.cl}}</td>
+        </tr>
+        <tr>
+          <th>Mobile Number</th>
+          <td>{{order.mob}}</td>
+        </tr>
+        <tr>
+          <th>Email Address</th>
+          <td>{{order.em}}</td>
+        </tr>
+
+        <tr>
+          <th>Total Rent</th>
+          <td>{{order.rent}} Taka</td>
+        </tr>
+        <tr>
+          <th>Transport</th>
+          <td>{{order.vehicle.car_name}}</td>
+        </tr>
+        <tr>
+          <th>Duration</th>
+          <td>{{order.days}} days</td>
+        </tr>
+        <tr>
+          <th>Driver</th>
+          <td>{{order.vehicle.driver_name}}</td>
+        </tr>
+        <tr>
+          <th>Driver's Contact</th>
+          <td>{{order.vehicle.driver_contact}}</td>
+        </tr>
+        <tr>
+          <th>
+            Reservation Date:
+          </th>
+          <td>
+            {{order.reservation_date}}
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Reservation Type
+          </th>
+          <td>
+            {{order.status}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+{% endblock %}

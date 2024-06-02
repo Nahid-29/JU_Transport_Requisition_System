@@ -1,0 +1,108 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="w3-bar w3-large w3-black">
+  <div class="w3-bar-item w3-left w3-black">Client Portal: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/home_page/">Home</a>
+  <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search Transport</a>
+</div>
+<h3 class="w3-center" style="padding-top:20"><b>Transport Requisition Lists</b></h3>
+<div class="w3-center" style="padding:50px; height: 500px;">
+<table class="w3-table w3-striped w3-center">
+
+
+  <tr>
+    <th>Client Name</th>
+    <th>Client Mobile Number</th>
+    <th>Client Email Address</th>
+    <th>Transport</th>
+    <th>Days</th>
+    <th>Rent</th>
+    <th>Capacity</th>
+    <th>Description</th>
+    <th>Reservation Date</th>
+    <th>Reservation Status</th>
+    <th>Driver Name</th>
+    <th>Driver's Contact Number</th>
+
+    <th>Action</th>
+  </tr>
+  {% for order in od %}
+  <tr>
+    <td>{{order.cl}}</td>
+    <td>{{order.mob}}</td>
+    <td>{{order.em}}</td>
+    <td>{{order.vehicle.car_name}}</td>
+    <td>{{order.days}}</td>
+    <td>{{order.rent}} Taka</td>
+    <td>{{order.vehicle.capacity}} Seats</td>
+    <td>{{order.vehicle.description}}</td>
+    <td>{{order.reservation_date}}</td>
+    <td>{{order.status}}</td>
+    <td>{{order.vehicle.driver_name}}</td>
+    <td>{{order.vehicle.driver_contact}}</td>
+    <td>
+      <form action = "/customer_portal/delete/" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="{{order.id}}">
+      <input class="w3-btn w3-red" type="submit" value="Cancel">
+    </form>
+  </td>
+  </tr>
+
+{% endfor %}
+</table>
+</div>
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+{% endblock %}

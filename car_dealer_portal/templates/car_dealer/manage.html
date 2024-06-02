@@ -1,0 +1,95 @@
+{% extends 'car_dealer/base.html' %}
+{% block content %}
+<div class="w3-bar w3-black w3-large">
+  <div class="w3-bar-item w3-left w3-black">Admin: {{user.username}}</div>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/logout/">Logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right " href="/car_dealer_portal/auth/">Home</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/order_list/">Application</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/manage_vehicles/">Transport</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/car_dealer_portal/history/">Trip_Revenue</a>
+</div>
+<h3 class="w3-center" style="padding-top:30"><b>Available Transport</b></h3>
+<div style="padding: 20px; height: 700px;">
+<table class="w3-table w3-striped w3-center">
+
+  <tr>
+    <th style="padding:20;">Transport </th>
+    <th style="padding:20;">Color </th>
+    <th style="padding:20;">Capacity </th>
+    <th style="padding:20;">Pincode </th>
+    <th style="padding:20;">Brand</th>
+    <th style="padding:20;">Driver Name</th>
+    <th style="padding:20;">Driver Contact Number</th>
+    <th style="padding:20;">Action</th>
+  </tr>
+  {% for vehicle in vehicle_list %}
+  <tr>
+      <td>{{vehicle.car_name}}</td>
+      <td>{{vehicle.color}}</td>
+      <td>{{vehicle.capacity}} Seats</td>
+      <td>{{vehicle.area.pincode}}</td>
+      <td>{{vehicle.area.city}}</td>
+      <td>{{vehicle.driver_name}}</td>
+      <td>{{vehicle.driver_contact}}</td>
+      <td><form action = "/car_dealer_portal/delete/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{vehicle.id}}">
+        <input class="w3-btn w3-red" type="submit" value="Delete">
+      </form></td>
+  </tr>
+{% endfor %}
+</table>
+</div>
+
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+{% endblock %}

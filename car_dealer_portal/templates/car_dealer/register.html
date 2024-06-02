@@ -1,0 +1,160 @@
+{% extends 'car_dealer/base.html' %}
+{% block content %}
+<div class="w3-bar">
+ 
+  <a class="w3-bar-item w3-right w3-btn w3-teal" href="/car_dealer_portal/login/">Login</a>
+  <a class="w3-bar-item w3-right w3-btn w3-teal" href="/">Home</a>
+  
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      background-color: #b0c6d8;
+      margin-top: 10px;
+    }
+    .table tr:nth-child(even) {
+      background-color: #e9ecef;
+    }
+    .table tr:nth-child(odd) {
+      background-color: #f8f9fa;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #dee2e6;
+    }
+    .form-control {
+      background-color: #ffffff;
+      border: 1px solid #ced4da;
+    }
+    .btn-submit {
+      background-color: #007bff;
+      border: none;
+      color: white;
+    }
+    .btn-submit:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container form-container">
+  <h2 class="text-center mb-4">Registration Form</h2>
+  <form action="/car_dealer_portal/registration/" method="POST" class="needs-validation" novalidate>
+    {% csrf_token %}
+    <table class="table table-borderless table-hover">
+      <tbody>
+        <tr>
+          <td><label for="firstname"><b>First Name:</b></label></td>
+          <td><input type="text" class="form-control" id="firstname" name="firstname" required></td>
+        </tr>
+        <tr>
+          <td><label for="lastname"><b>Last Name:</b></label></td>
+          <td><input type="text" class="form-control" id="lastname" name="lastname" required></td>
+        </tr>
+        <tr>
+          <td><label for="username"><b>Username:</b></label></td>
+          <td><input type="text" class="form-control" id="username" name="username" required></td>
+        </tr>
+        <tr>
+          <td><label for="password"><b>Password:</b></label></td>
+          <td><input type="password" class="form-control" id="password" name="password" required></td>
+        </tr>
+        <tr>
+          <td><label for="email"><b>Email:</b></label></td>
+          <td><input type="email" class="form-control" id="email" name="email" required></td>
+        </tr>
+        <tr>
+          <td><label for="mobile"><b>Contact:</b></label></td>
+          <td><input type="text" class="form-control" id="mobile" name="mobile" required></td>
+        </tr>
+        <tr>
+          <td><label for="city"><b>Office:</b></label></td>
+          <td><input type="text" class="form-control" id="city" name="city" required></td>
+        </tr>
+        <tr>
+          <td><label for="pincode"><b>Pincode:</b></label></td>
+          <td><input type="text" class="form-control" id="pincode" name="pincode" required></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center">
+            <button type="submit" class="btn btn-submit btn-block"><b>Submit</b></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <style>
+      /* Footer.css */
+      .footer-container {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+  
+      .university-info {
+        font-size: 16px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-container">
+      <div class="footer-content">
+        <p class="university-info">
+          Jahangirnagar University, Savar, Dhaka-1342, Bangladesh
+        </p>
+        <p class="contact-info">
+          Telephone: PABX: 02224491045-51, Fax: 02224491052
+        </p>
+        <p class="copyright">
+          &copy; 2024 Jahangirnagar University
+        </p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
+
+{% endblock %}
+
